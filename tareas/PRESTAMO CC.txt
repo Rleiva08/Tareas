@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float monto_prestamo, num_meses, interes_mensual, monto_total;
+    
+    cout << "Ingrese el monto del préstamo: ";
+    cin >> monto_prestamo;
+    
+    cout << "Ingrese el número de meses: ";
+    cin >> num_meses;
+    
+    interes_mensual = monto_prestamo * 0.02;
+    monto_total = monto_prestamo + interes_mensual * num_meses;
+    
+    cout << "El monto total a pagar es: " << monto_total << endl;
+    
+    return 0;
+}

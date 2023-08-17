@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int n, hp, i, j, temp;
+    string cad;
+    cout << "Registro y orden" << endl;
+    n = -1;
+    while (n <= 0) {
+        cout << "¿Cuántos números desea ingresar? ";
+        cin >> n;
+        if (n <= 0) {
+            cout << "No se puede crear un arreglo con espacios menores a 0." << endl;
+        }
+    }
+    int vec[n];
+    cout << "Valor #1: ";
+    cin >> vec[0];
+    for (i = 1; i < n; i++) {
+        cout << "Valor #" << i + 1 << ": ";
+        cin >> hp;
+        bool chang = false;
+        for (j = 0; j < i; j++) {
+            if (hp <= vec[j]) {
+                chang = true;
+            }
+            if (chang) {
+                temp = vec[j];
+                vec[j] = hp;
+                hp = temp;
+            }
+        }
+        if (!chang) {
+            vec[i] = hp;
+        }
+    }
+    cout << "Estos son los valores que ingresó ordenados de menor a mayor: ";
+    for (i = 0; i < n - 1; i++) {
+        cad += to_string(vec[i]) + ", ";
+    }
+    cad += to_string(vec[n - 1]) + ".";
+    cout << cad << endl;
+
+    return 0;
+}

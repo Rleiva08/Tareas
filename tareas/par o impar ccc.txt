@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "   Par o impar" << endl;
+    cout << "¿Qué número desea probar? ";
+    cin >> n;
+    if (n % 2 == 0) {
+        cout << "El número es par" << endl;
+    } else {
+        cout << "El número es impar" << endl;
+    }
+    
+    return 0;
+}

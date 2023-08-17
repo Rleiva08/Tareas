@@ -1,0 +1,38 @@
+#include <iostream>
+
+int main() {
+    int numero1, numero2, resultado;
+    char operador;
+    
+    // Solicitar los números y el operador
+    std::cout << "Ingrese el primer número: ";
+    std::cin >> numero1;
+    
+    std::cout << "Ingrese el segundo número: ";
+    std::cin >> numero2;
+    
+    std::cout << "Ingrese el operador (+, -, x, /, mod): ";
+    std::cin >> operador;
+    
+    // Realizar la operación matemática según el operador ingresado
+    if (operador == '+') {
+        resultado = numero1 + numero2;
+        std::cout << "La suma de " << numero1 << " y " << numero2 << " es igual a " << resultado << std::endl;
+    } else if (operador == '-') {
+        resultado = numero1 - numero2;
+        std::cout << "La resta de " << numero1 << " y " << numero2 << " es igual a " << resultado << std::endl;
+    } else if (operador == 'x') {
+        resultado = numero1 * numero2;
+        std::cout << "La multiplicación de " << numero1 << " por " << numero2 << " es igual a " << resultado << std::endl;
+    } else if (operador == '/') {
+        resultado = numero1 / numero2;
+        std::cout << "La división de " << numero1 << " entre " << numero2 << " es igual a " << resultado << std::endl;
+    } else if (operador == 'mod') {
+        resultado = numero1 % numero2;
+        std::cout << "El módulo de " << numero1 << " entre " << numero2 << " es igual a " << resultado << std::endl;
+    } else {
+        std::cout << "Operador inválido. Por favor, ingrese un operador válido." << std::endl;
+    }
+    
+    return 0;
+}

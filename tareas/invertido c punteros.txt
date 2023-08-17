@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese un número: ";
+    cin >> n;
+
+    string a = to_string(n);
+    int b = a.length();
+
+    char* x = new char[b + 1]; // Reservamos memoria para almacenar el número invertido
+
+    int idx = 0;
+    while (b > 0) {
+        x[idx] = a[b - 1]; // Copiamos el carácter invertido en el arreglo
+        b--;
+        idx++;
+    }
+
+    x[idx] = '\0'; // Agregamos el carácter nulo para finalizar la cadena.
+
+    cout << "El número " << n << " invertido es: " << atoi(x) << endl;
+
+    delete[] x; // Liberamos la memoria reservada para el arreglo
+
+    return 0;
+}

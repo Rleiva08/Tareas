@@ -1,0 +1,83 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Declaración de variables
+    int dia_nacimiento, mes_nacimiento, anio_nacimiento;
+    int dia_actual, mes_actual, anio_actual;
+    int edad_anios, edad_meses, edad_dias;
+    
+    // Solicitar datos al usuario
+    cout << "Ingrese su fecha de nacimiento:" << endl;
+    cout << "Día: ";
+    cin >> dia_nacimiento;
+    
+    cout << "Mes: ";
+    cin >> mes_nacimiento;
+    
+    cout << "Año: ";
+    cin >> anio_nacimiento;
+    
+    cout << "Ingrese la fecha actual:" << endl;
+    cout << "Día: ";
+    cin >> dia_actual;
+    
+    cout << "Mes: ";
+    cin >> mes_actual;
+    
+    cout << "Año: ";
+    cin >> anio_actual;
+    
+    // Calcular la edad en años, meses y días
+    // Primero calculamos la edad en años
+    edad_anios = anio_actual - anio_nacimiento;
+    
+    // Luego verificamos si aún no ha cumplido años en el presente año
+    if (mes_actual < mes_nacimiento || (mes_actual == mes_nacimiento && dia_actual < dia_nacimiento)) {
+        edad_anios = edad_anios - 1;
+    }
+    
+    // Calculamos la edad en meses
+    edad_meses = mes_actual - mes_nacimiento;
+    if (edad_meses < 0) {
+        edad_meses = edad_meses + 12;
+    }
+    
+    // Calculamos la edad en días
+    edad_dias = dia_actual - dia_nacimiento;
+    if (edad_dias < 0) {
+        // Obtenemos el número de días del mes anterior
+        switch (mes_nacimiento) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                edad_dias = edad_dias + 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                edad_dias = edad_dias + 30;
+                break;
+            case 2:
+                if ((anio_nacimiento % 4 == 0 && anio_nacimiento % 100 != 0) || anio_nacimiento % 400 == 0) {
+                    edad_dias = edad_dias + 29;
+                } else {
+                    edad_dias = edad_dias + 28;
+                }
+                break;
+        }
+    }
+    
+    // Mostrar la edad al usuario
+    cout << "Su edad es:" << endl;
+    cout << "Años: " << edad_anios << endl;
+    cout << "Meses: " << edad_meses << endl;
+    cout << "Días: " << edad_dias << endl;
+
+    return 0;
+}

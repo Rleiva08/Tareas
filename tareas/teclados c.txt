@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int cantidadTeclados, costoPorTeclado, costoTotal;
+    
+    // Solicitar la cantidad de teclados a comprar
+    cout << "Ingrese la cantidad de teclados a comprar: ";
+    cin >> cantidadTeclados;
+    
+    // Calcular el costo por teclado según la cantidad
+    if (cantidadTeclados > 8) {
+        costoPorTeclado = 85;
+    } else if (cantidadTeclados >= 4) {
+        costoPorTeclado = 90;
+    } else {
+        costoPorTeclado = 100;
+    }
+    
+    // Calcular el costo total
+    costoTotal = cantidadTeclados * costoPorTeclado;
+    
+    // Mostrar el número de teclados a comprar y el total a pagar
+    cout << "Número de teclados a comprar: " << cantidadTeclados << endl;
+    cout << "Total a pagar: " << costoTotal << " lempiras" << endl;
+    
+    return 0;
+}

@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int n, b;
+    char a, x;
+    cout << "Ingrese un número: ";
+    cin >> n;
+    a = to_string(n);
+    b = a.length();
+    while (b > 0) {
+        x = x + a.substr(b - 1, 1);
+        b = b - 1;
+    }
+    cout << "El número " << n << " invertido es: " << stoi(x) << endl;
+    
+    return 0;
+}

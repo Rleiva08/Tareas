@@ -1,0 +1,27 @@
+#include <iostream>
+
+int main() {
+    int* numero = new int; // Puntero para almacenar el número ingresado
+    int* resultado = new int; // Puntero para almacenar el resultado de cada multiplicación
+
+    // Solicitar el número entero del 1 al 12
+    std::cout << "Ingrese un número entero del 1 al 12: ";
+    std::cin >> *numero; // Leemos el número ingresado al que apunta el puntero 'numero'
+    
+    // Validar que el número esté dentro del rango válido
+    if (*numero < 1 || *numero > 12) {
+        std::cout << "Número inválido. Por favor, ingrese un número del 1 al 12." << std::endl;
+    } else {
+        // Mostrar la tabla de multiplicar del número ingresado
+        std::cout << "Tabla de multiplicar del número " << *numero << ":" << std::endl;
+        for (int i = 1; i <= 10; i++) {
+            *resultado = *numero * i; // Guardamos el resultado en la ubicación de memoria apuntada por 'resultado'
+            std::cout << *numero << " x " << i << " = " << *resultado << std::endl;
+        }
+    }
+
+    delete numero; // Liberamos la memoria reservada para el número ingresado
+    delete resultado; // Liberamos la memoria reservada para el resultado
+
+    return 0;
+}
