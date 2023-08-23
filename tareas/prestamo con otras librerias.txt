@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+using namespace std;
+
+bool esNumeroValido(const char* str) {
+    for (size_t i = 0; i < strlen(str); i++) {
+        if (!isdigit(str[i]) && str[i] != '.') {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    char input[100];
+    float monto_prestamo, num_meses, interes_mensual, monto_total;
+    
+    cout << "Ingrese el monto del préstamo: ";
+    cin.getline(input, sizeof(input));
+
+    
+    while (!esNumeroValido(input)) {
+        cout << "Entrada inválida. Por favor, ingrese un monto válido: ";
+        cin.getline(input, sizeof(input));
+    }
+    monto_prestamo = atof(input);
+    
+    cout << "Ingrese el número de meses: ";
+    cin.getline(input, sizeof(input));
+
+    while (!esNumeroValido(input)) {
+        cout << "Entrada inválida. Por favor, ingrese un número válido de meses: ";
+        cin.getline(input, sizeof(input));
+    }
+    num_meses = atof(input);
+    
+    interes_mensual = monto_prestamo * 0.02;
+    monto_total = monto_prestamo + interes_mensual * num_meses;
+    
+    cout << "El monto total a pagar es: " << monto_total << endl;
+    
+    return 0;
+}

@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int opcion;
+    double base, altura, lado, radio, area;
+
+    // Mostrar opciones al usuario
+    cout << "Calculadora de áreas de figuras geométricas" << endl;
+    cout << "1. Triángulo" << endl;
+    cout << "2. Cuadrado" << endl;
+    cout << "3. Rectángulo" << endl;
+    cout << "4. Círculo" << endl;
+    cout << "Ingrese el número correspondiente a la figura: ";
+    cin >> opcion;
+
+    // Calcular y mostrar el área según la opción seleccionada
+    switch (opcion) {
+        case 1:
+            cout << "Ingrese la base del triángulo: ";
+            cin >> base;
+            cout << "Ingrese la altura del triángulo: ";
+            cin >> altura;
+            area = (base * altura) / 2;
+            cout << "El área del triángulo es: " << area << endl;
+            break;
+        case 2:
+            cout << "Ingrese el lado del cuadrado: ";
+            cin >> lado;
+            area = lado * lado;
+            cout << "El área del cuadrado es: " << area << endl;
+            break;
+        case 3:
+            cout << "Ingrese la base del rectángulo: ";
+            cin >> base;
+            cout << "Ingrese la altura del rectángulo: ";
+            cin >> altura;
+            area = base * altura;
+            cout << "El área del rectángulo es: " << area << endl;
+            break;
+        case 4:
+            cout << "Ingrese el radio del círculo: ";
+            cin >> radio;
+            area = 3.1416 * radio * radio;
+            cout << "El área del círculo es: " << area << endl;
+            break;
+        default:
+            cout << "Opción inválida" << endl;
+    }
+
+    return 0;
+}

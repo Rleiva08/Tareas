@@ -1,0 +1,21 @@
+#include <iostream>
+
+int main() {
+    // Declaración de variables
+    int N, suma;
+    suma = 0;
+
+    // Solicitar número límite al usuario
+    std::cout << "Ingrese el número límite (N): ";
+    std::cin >> N;
+
+    // Calcular la suma de los N primeros números naturales
+    for (int i = 1; i <= N; i++) {
+        suma += i;
+    }
+
+    // Mostrar la suma
+    std::cout << "La suma de los " << N << " primeros números naturales es: " << suma << std::endl;
+
+    return 0;
+}

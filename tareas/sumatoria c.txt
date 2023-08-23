@@ -1,0 +1,21 @@
+#include <iostream>
+
+int main() {
+    int n, hp;
+    std::cout << "Suma de 1 hasta n --" << std::endl;
+    std::cout << "Se calculará la sumatoria de 1 hasta el número n que ingrese." << std::endl;
+
+    n = 0;
+    while (n <= 0) {
+        std::cout << "Escriba el valor de n: ";
+        std::cin >> n;
+        if (n <= 0) {
+            std::cout << "Recuerde que debe ingresar un número natural distinto de 0." << std::endl;
+        }
+    }
+
+    hp = (n * (n + 1)) / 2;
+    std::cout << "La suma de 1 hasta " << n << " es " << hp << std::endl;
+
+    return 0;
+}

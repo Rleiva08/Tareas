@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int* n = new int; // Declaramos un puntero n que apunta a un entero en memoria dinámica
+
+    cout << "   Par o impar" << endl;
+    cout << "¿Qué número desea probar? ";
+    cin >> *n; // Leemos el valor del entero al que apunta el puntero n
+
+    if (*n % 2 == 0) {
+        cout << "El número es par" << endl;
+    } else {
+        cout << "El número es impar" << endl;
+    }
+
+    delete n; // Liberamos la memoria reservada para el entero
+
+    return 0;
+}

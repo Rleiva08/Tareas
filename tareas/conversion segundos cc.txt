@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int sg, mn, hr;
+    cout << "Horas, minutos, segundos" << endl;
+
+    sg = -1;
+    while (sg < 0) {
+        cout << "¿Cuántos segundos quiere convertir? ";
+        cin >> sg;
+        if (sg < 0) {
+            cout << "No ingrese valores negativos para los segundos." << endl;
+        }
+    }
+
+    if (sg % 60 != 0) {
+        if (sg % 60 == 1) {
+            cout << sg % 60 << " segundo" << endl;
+        } else {
+            cout << sg % 60 << " segundos" << endl;
+        }
+    }
+
+    mn = (sg - (sg % 60)) / 60;
+    if (mn % 60 != 0 && mn > 0) {
+        if (mn % 60 == 1) {
+            cout << mn % 60 << " minuto" << endl;
+        } else {
+            cout << mn % 60 << " minutos" << endl;
+        }
+    }
+
+    hr = (mn - (mn % 60)) / 60;
+    if (hr > 0) {
+        if (hr == 1) {
+            cout << hr << " hora" << endl;
+        } else {
+            cout << hr << " horas" << endl;
+        }
+    }
+
+    return 0;
+}
